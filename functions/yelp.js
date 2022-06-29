@@ -3,7 +3,12 @@ require('dotenv').config();
 
 exports.handler = async (event, context) => {
   try {
-    const response = await fetch(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${event.queryStringParameters.pokeQuery}`);
+    const response = await fetch(`https://api.yelp.com/v3/businesses/search?location=${event.queryStringParameters.searchFilter}`, {
+      headers: {
+        'Authorization': `Bearer ${process.env.YELP_KEY}`,
+      },
+    });
+    
     const data = await response.json();
     const json = JSON.stringify({ data });
 
