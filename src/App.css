@@ -1,12 +1,23 @@
 img {
-  width: 150px;
+  height: 150px;
 }
 
 .pokemon-search {
   text-align: center;
 }
 
+.yelp-search {
+  text-align: center;
+}
+
 .pokemon-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.businesses-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -18,4 +29,13 @@ img {
   padding: 5px;
   border: 3px solid green;
   background-color: rgba(0, 128, 0, 0.518);
+  height: 210px;
+}
+
+.yelp {
+  margin: 10px;
+  padding: 5px;
+  border: 3px solid red;
+  background-color: rgba(255, 0, 0, 0.489);
+  height: 350px;
 }
