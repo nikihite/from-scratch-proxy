@@ -2,6 +2,10 @@ img {
   width: 150px;
 }
 
+.pokemon-search {
+  text-align: center;
+}
+
 .pokemon-list {
   display: flex;
   flex-direction: row;

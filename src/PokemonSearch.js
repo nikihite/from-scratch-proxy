@@ -5,7 +5,6 @@ import { getPokemon } from './services/fetch-utils';
 export default function PokemonSearch() {
   const [pokemon, setPokemon] = useState([]);
   const [pokemonQuery, setPokemonQuery] = useState('');
-  console.log(pokemonQuery);
   useEffect(() => {
     load();
   // eslint-disable-next-line react-hooks/exhaustive-deps
