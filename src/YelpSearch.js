@@ -5,7 +5,7 @@ import { getYelpData } from './services/fetch-utils';
 export default function YelpSearch() {
   const [yelpData, setYelpData] = useState([]);
   const [yelpQuery, setYelpQuery] = useState('portland');
-  console.log(yelpData);
+  
   useEffect(() => {
     load();
   // eslint-disable-next-line react-hooks/exhaustive-deps
