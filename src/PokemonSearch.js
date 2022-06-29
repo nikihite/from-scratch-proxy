@@ -14,14 +14,10 @@ export default function PokemonSearch() {
     const results = await getPokemon(pokemonQuery);
     setPokemon(results.data.results);
   }
-  // async function loadPokemonSearch() {
-  //   const pokemon = await getPokemon(pokemonQuery);
-  //   setPokemon(pokemon);
-  // }
+
   async function handlePokemonSearch(e) {
     e.preventDefault();
     await load();
-    // loadPokemonSearch();
   }
   return (
     <div className='pokemon-search'>
