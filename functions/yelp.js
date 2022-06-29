@@ -12,8 +12,6 @@ exports.handler = async (event, context) => {
     const data = await response.json();
     const json = JSON.stringify({ data });
 
-    console.log(json, 'FROM OUR NETLIFY FUNCTION!!!!!');
-
     return { 
       statusCode: 200, 
       body: json
