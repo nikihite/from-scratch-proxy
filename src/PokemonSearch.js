@@ -1,67 +1,37 @@
 import { useState, useEffect } from 'react';
 import PokemonList from './PokemonList';
 import { getPokemon } from './services/fetch-utils';
-<<<<<<< HEAD
- 
-export default function PokemonSearch() {
-  const [pokemon, setPokemon] = useState('');
-  const [pokemonQuery, setPokemonQuery] = useState('');
- 
-  useEffect(() => {
-    load();
- // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
- 
-=======
 
 export default function PokemonSearch() {
-  const [pokemon, setPokemon] = useState('');
+  const [pokemon, setPokemon] = useState([]);
   const [pokemonQuery, setPokemonQuery] = useState('');
-
+  console.log(pokemonQuery);
   useEffect(() => {
     load();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
->>>>>>> 78fb558ea6bbc3a866a6d2502ccc180a7acd4e17
   async function load() {
-    const { results } = await getPokemon(pokemonQuery);
-    setPokemon(results);
+    const results = await getPokemon(pokemonQuery);
+    setPokemon(results.data.results);
   }
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> 78fb558ea6bbc3a866a6d2502ccc180a7acd4e17
-  async function loadPokemonSearch() {
-    const pokemon = await getPokemon(pokemonQuery);
-    setPokemon(pokemon);
-  }
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> 78fb558ea6bbc3a866a6d2502ccc180a7acd4e17
+  // async function loadPokemonSearch() {
+  //   const pokemon = await getPokemon(pokemonQuery);
+  //   setPokemon(pokemon);
+  // }
   async function handlePokemonSearch(e) {
     e.preventDefault();
-    loadPokemonSearch();
+    await load();
+    // loadPokemonSearch();
   }
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> 78fb558ea6bbc3a866a6d2502ccc180a7acd4e17
   return (
-    <div>
+    <div className='pokemon-search'>
       <form onSubmit={handlePokemonSearch}>
         <h2>Pokemon</h2>
         <input value={pokemonQuery} onChange={e => setPokemonQuery(e.target.value)} />
+        <button>Submit</button>
       </form>
       <PokemonList pokemon={pokemon}/>
     </div>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 78fb558ea6bbc3a866a6d2502ccc180a7acd4e17
