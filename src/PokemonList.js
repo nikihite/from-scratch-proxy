@@ -1,7 +1,9 @@
+
+
 export default function PokemonList({ pokemon }) {
   return (
     <div className="pokemon-list">
-    
+
       <h2>Pokemon List</h2>
       {
         !pokemon.length ?
@@ -14,4 +16,3 @@ export default function PokemonList({ pokemon }) {
     </div>
   );
 }
-   
